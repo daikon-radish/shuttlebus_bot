@@ -1,1 +1,1 @@
-web: python Shuttlebus Main.py
+worker: python ShuttlebusMain.py
