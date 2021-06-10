@@ -1,5 +1,7 @@
 from telegram.ext import *
 from datetime import datetime
+from pytz import timezone
+import pytz
 
 WeekDayCondoTime = [600,620,640,700,720,740,800,820,840,900,930,1000,1700,1730,1800,1820,1840,1900,1930,2000,2030]
 WeekDayMrtTime = [610,630,650,710,730,750,810,830,850,915,945,1710,1740,1810,1830,1850,1915,1945,2015,2045]
@@ -11,12 +13,12 @@ SundayMrtTime = [945,1015,1045,1115,1145,1215,1245,1315]
 time_difference_list = []
 
 def time():
-    now = datetime.now()
+    now = datetime.now(timezone("Asia/Singapore"))
     current_time = int((now.strftime("%H%M")))
     return current_time
 
 def day():
-    now = datetime.now()
+    now = datetime.now(timezone("Asia/Singapore"))
     day = now.weekday()
     return day
 
